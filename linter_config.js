@@ -32,7 +32,7 @@ module.exports = {
         "allowSingleExtends": true
       }
     ],
-    "react/prop-types": "off"
+    "react/prop-types": 0
   },
   overrides: [
     {
