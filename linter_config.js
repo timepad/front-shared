@@ -17,10 +17,14 @@ module.exports = {
     "prettier/prettier": "warn",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/semi": ["error", "always"],
-    "@typescript-eslint/interface-name-prefix": ["error", {
-      "prefixWithI": "always",
-      "allowUnderscorePrefix": false
-    }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { // требуем I-префикс
+        selector: "interface",
+        format: ["PascalCase"],
+        custom: { regex: "^I[A-Z]", match: true },
+      },
+    ],
     "no-console": ["error", { allow: ["warn", "error"] }],
     "no-param-reassign": "error",
     "no-unused-vars": "error",
