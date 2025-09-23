@@ -3,15 +3,16 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: "module"
   },
-  "plugins": [
-    "react-hooks"
+  plugins: [
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
   ],
   rules: {
     "prettier/prettier": "warn",
@@ -19,24 +20,22 @@ module.exports = {
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/naming-convention": [
       "error",
-      { // требуем I-префикс
+      {
         selector: "interface",
         format: ["PascalCase"],
-        custom: { regex: "^I[A-Z]", match: true },
-      },
-    ],
-    "no-console": ["error", { allow: ["warn", "error"] }],
-    "no-param-reassign": "error",
-    "no-unused-vars": "error",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "@typescript-eslint/no-empty-interface": [
-      "warn",
-      {
-        "allowSingleExtends": true
+        custom: { regex: "^I[A-Z]", match: true }
       }
     ],
-    "react/prop-types": 0
+    "@typescript-eslint/no-empty-interface": [
+      "warn",
+      { allowSingleExtends: true }
+    ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "no-console": ["error", { allow: ["warn", "error"] }],
+    "no-param-reassign": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off"
   },
   overrides: [
     {
