@@ -20,7 +20,7 @@ module.exports = {
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/naming-convention": [
       "error",
-      {
+      { // требуем I-префикс
         selector: "interface",
         format: ["PascalCase"],
         custom: { regex: "^I[A-Z]", match: true }
